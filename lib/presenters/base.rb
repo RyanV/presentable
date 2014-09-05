@@ -13,5 +13,10 @@ module Presenters
     def initialize(subject)
       @subject = subject
     end
+
+    # overwrite in subclasses of Presenters::Base
+    def as_json(*args)
+      subject.as_json(*args)
+    end
   end
 end
